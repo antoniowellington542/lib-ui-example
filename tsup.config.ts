@@ -8,5 +8,9 @@ export default defineConfig({
     minify: true,
     sourcemap: true,
     clean: true,
-    tsconfig: "tsconfig.build.json"
+    tsconfig: "tsconfig.build.json",
+    esbuildOptions(options) {
+        options.jsxFactory = "React.createElement";
+        options.jsxFragment = "React.Fragment";
+    },
 })
